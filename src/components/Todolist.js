@@ -30,8 +30,6 @@ export default function Todolist() {
       <Button size="small">Learn More</Button>
       </CardActions>
     </CardContent>
-
   </Container>
-
   );
 }
