@@ -14,24 +14,25 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 
 export default function Todo() {
   return (
-  <Container  style={{background:'orange', color: 'white',padding:'30px'}}>
+  <Container className="Todocard" style={{background:'orange', color: 'white',padding:'10px'}}>
 
     <Grid container spacing={2} style={{background:'orange'}} >
   <Grid size={8} >
               {/* Title */}
       <Typography variant='h4' sx={{textAlign:'left',}} >First Mission</Typography>
+      <Typography variant='h6' sx={{textAlign:'left',}} >Complete Todo list project</Typography>
   </Grid>
   {/* Action Icons */}
-  <Grid size={4} sx={{textAlign:'right',}} >
-<IconButton  style={{background: 'white',border:'2px solid green',borderRadius:'50%'}}>
+  <Grid size={4} sx={{textAlign:'right',}} display="flex" justifyContent="space-around" alignItems="center">
+<IconButton className='iconbutton' style={{background: 'white',border:'2px solid green',borderRadius:'50%',marginRight:"5px"}}>
   <AddTaskIcon style={{color:'green',}}/>
 </IconButton>
 
-<IconButton  style={{background: 'white',border:'2px solid blue',borderRadius:'50%'}}>
+<IconButton  className='iconbutton' style={{background: 'white',border:'2px solid blue',borderRadius:'50%',marginRight:"5px"}}>
   <EditOutlinedIcon style={{color:'blue'}}/>
 </IconButton>
 
-<IconButton style={{background: 'white',border:'2px solid red',borderRadius:'50%'}}>
+<IconButton className='iconbutton' style={{background: 'white',border:'2px solid red',borderRadius:'50%'}}>
   <DeleteOutlineIcon style={{color:'red',}}/>
 </IconButton>
 {/* ===== Action Icons ===== */}

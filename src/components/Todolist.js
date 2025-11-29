@@ -1,7 +1,5 @@
 import * as React from 'react';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Divider from '@mui/material/Divider';
@@ -37,9 +35,6 @@ export default function Todolist() {
       {/* To Do Item */}
       <Todo/>
       {/*====== Finish To Do Item =====*/}
-      <CardActions>
-      <Button size="small">Learn More</Button>
-      </CardActions>
     </CardContent>
   </Container>
   );
