@@ -7,7 +7,7 @@ function App() {
     <div className="App" style={{display: 'flex', 
     justifyContent: 'center', 
     alignItems: 'center',
-    background: 'lightgray',
+    background: '#0F0F26',
     height:'100vh',}} >
       <Todolist />
           </div>

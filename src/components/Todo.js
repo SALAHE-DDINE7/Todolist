@@ -12,15 +12,15 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 
 
 
-export default function Todo() {
+export default function Todo({title,details}) {
   return (
-  <Container className="Todocard" style={{background:'orange', color: 'white',padding:'10px'}}>
+  <Container className="Todocard" style={{background:'#1F3378', color: 'white',padding:'10px',marginTop:'15px',marginBottom:'15px',borderRadius:'10px'}}>
 
-    <Grid container spacing={2} style={{background:'orange'}} >
+    <Grid container spacing={2}  >
   <Grid size={8} >
               {/* Title */}
-      <Typography variant='h4' sx={{textAlign:'left',}} >First Mission</Typography>
-      <Typography variant='h6' sx={{textAlign:'left',}} >Complete Todo list project</Typography>
+      <Typography variant='h4' sx={{textAlign:'left',}} > {title} </Typography>
+      <Typography variant='h6' sx={{textAlign:'left',}} > {details} </Typography>
   </Grid>
   {/* Action Icons */}
   <Grid size={4} sx={{textAlign:'right',}} display="flex" justifyContent="space-around" alignItems="center">
