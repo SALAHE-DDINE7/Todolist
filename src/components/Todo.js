@@ -29,12 +29,13 @@ export default function Todo({todo,handleCheckClick}) {
   {/* Action Icons */}
   <Grid size={4} sx={{textAlign:'right',}} display="flex" justifyContent="space-around" alignItems="center">
 {/* ===== Chek  Action Icons ===== */}
-<IconButton  className='iconbutton' style={{background: 'white',border:'2px solid green',borderRadius:'50%',marginRight:"5px"}}
+<IconButton  className='iconbutton' style={{background:todo.isCompleted ? "green": 'white',
+border:'2px solid green',borderRadius:'50%',marginRight:"5px"}}
 onClick={()=>{
   handleCheck();
 }}
 >
-  <AddTaskIcon style={{color:'green',}}/>
+  <AddTaskIcon style={{color: todo.isCompleted?'white' :'green',}}/>
 </IconButton>
 {/* ===== Edit  Action Icons ===== */}
 <IconButton  className='iconbutton' style={{background: 'white',border:'2px solid blue',borderRadius:'50%',marginRight:"5px"}}>

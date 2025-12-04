@@ -52,12 +52,7 @@ export default function Todolist() {
 function handleCheckClick(id) {
 const update = todo.map((t)=>{
   if (t.id === id) {
-    if(t.isCompleted==true){
-      t.isCompleted = false;
-    }else{
-
-      t.isCompleted = true;
-    }
+      t.isCompleted = !t.isCompleted;
   }
   return t;
 });
