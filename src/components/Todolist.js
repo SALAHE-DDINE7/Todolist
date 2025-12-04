@@ -47,12 +47,30 @@ export default function Todolist() {
   // States
   const [todo,setTodos]=useState(todos);
   const [inputValue, setInputValue]=useState("");
+  
+  // Functions
+function handleCheckClick(id) {
+const update = todo.map((t)=>{
+  if (t.id === id) {
+    if(t.isCompleted==true){
+      t.isCompleted = false;
+    }else{
+
+      t.isCompleted = true;
+    }
+  }
+  return t;
+});
+setTodos(update);
+}
+
+
   // Affichage des todos
   const todoaffiche = todo.map((e)=>{
-    return <Todo key={e.id} title={e.title} details={e.details} />;
+    return <Todo key={e.id} todo={e}  handleCheckClick={handleCheckClick}/>;
   })
 
-  // Functions
+  // Add Todo
 function handleAddTodo(){
   const newTodo = {
     id:v4(),

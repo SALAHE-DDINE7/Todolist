@@ -12,22 +12,31 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 
 
 
-export default function Todo({title,details}) {
+export default function Todo({todo,handleCheckClick}) {
+  // Functions
+  function handleCheck(){
+    handleCheckClick(todo.id);
+  }
   return (
   <Container className="Todocard" style={{background:'#1F3378', color: 'white',padding:'10px',marginTop:'15px',marginBottom:'15px',borderRadius:'10px'}}>
 
     <Grid container spacing={2}  >
   <Grid size={8} >
               {/* Title */}
-      <Typography variant='h4' sx={{textAlign:'left',}} > {title} </Typography>
-      <Typography variant='h6' sx={{textAlign:'left',}} > {details} </Typography>
+      <Typography variant='h4' sx={{textAlign:'left',}} > {todo.title} </Typography>
+      <Typography variant='h6' sx={{textAlign:'left',}} > {todo.details} </Typography>
   </Grid>
   {/* Action Icons */}
   <Grid size={4} sx={{textAlign:'right',}} display="flex" justifyContent="space-around" alignItems="center">
-<IconButton className='iconbutton' style={{background: 'white',border:'2px solid green',borderRadius:'50%',marginRight:"5px"}}>
+{/* ===== Chek  Action Icons ===== */}
+<IconButton  className='iconbutton' style={{background: 'white',border:'2px solid green',borderRadius:'50%',marginRight:"5px"}}
+onClick={()=>{
+  handleCheck();
+}}
+>
   <AddTaskIcon style={{color:'green',}}/>
 </IconButton>
-
+{/* ===== Edit  Action Icons ===== */}
 <IconButton  className='iconbutton' style={{background: 'white',border:'2px solid blue',borderRadius:'50%',marginRight:"5px"}}>
   <EditOutlinedIcon style={{color:'blue'}}/>
 </IconButton>
