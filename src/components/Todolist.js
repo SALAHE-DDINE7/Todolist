@@ -17,52 +17,26 @@ import Todo from './Todo';
 
 // Others
 import { v4 } from 'uuid';
+import { TodosContext } from '../Context/TodosContext';
+import { useContext } from 'react';
 
 
-const todos = [
-  {
-    id: v4(),
-    title: "Complete Python",
-    details : "take the python certif from udemy",
-    isCompleted:false,
-  },
-  {
-    id: v4(),
-    title: "Complete TypeScript",
-    details : "take the Typscipt certif from udemy",
-    isCompleted:false,
-  },
-  {
-    id: v4(),
-    title: "Complete docker",
-    details : "take the docker certif from youtube",
-    isCompleted:false,
-  },
-]
 
 
 
 
 export default function Todolist() {
   // States
-  const [todo,setTodos]=useState(todos);
   const [inputValue, setInputValue]=useState("");
+  const {todos,setTodos} = useContext(TodosContext)
   
   // Functions
-function handleCheckClick(id) {
-const update = todo.map((t)=>{
-  if (t.id === id) {
-      t.isCompleted = !t.isCompleted;
-  }
-  return t;
-});
-setTodos(update);
-}
+
 
 
   // Affichage des todos
-  const todoaffiche = todo.map((e)=>{
-    return <Todo key={e.id} todo={e}  handleCheckClick={handleCheckClick}/>;
+  const todoaffiche = todos.map((e)=>{
+    return <Todo key={e.id} todo={e} />;
   })
 
   // Add Todo
@@ -73,7 +47,7 @@ function handleAddTodo(){
     details : "",
     isCompleted : false,
   }
-  setTodos([...todo, newTodo]);
+  setTodos([...todos, newTodo]);
   setInputValue("");
 }
 

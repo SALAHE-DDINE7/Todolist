@@ -9,13 +9,23 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 
 
+// import Context
+import {TodosContext} from '../Context/TodosContext';
+import { useContext } from 'react';
 
 
-
-export default function Todo({todo,handleCheckClick}) {
+export default function Todo({todo}) {
+  // context
+  const {todos,setTodos} = useContext(TodosContext);
   // Functions
   function handleCheck(){
-    handleCheckClick(todo.id);
+    const update = todos.map((t)=>{
+      if (t.id === todo.id) {
+          t.isCompleted = !t.isCompleted;
+      }
+      return t;
+    });
+    setTodos(update);
   }
   return (
   <Container className="Todocard" style={{background:'#1F3378', color: 'white',padding:'10px',marginTop:'15px',marginBottom:'15px',borderRadius:'10px'}}>
